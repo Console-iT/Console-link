@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="Console_link" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="Console_link" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="Console_link/Imports">
+      <xsd:import namespace="Console_link" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Console_link" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILinkService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="ILinkService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkService_UploadContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadContent" />
+  </wsdl:message>
+  <wsdl:message name="ILinkService_UploadContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkService_SubscribeEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeEvent" />
+  </wsdl:message>
+  <wsdl:message name="ILinkService_SubscribeEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkService_UnsubscribeEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeEvent" />
+  </wsdl:message>
+  <wsdl:message name="ILinkService_UnsubscribeEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkService_Publish_InputMessage">
+    <wsdl:part name="parameters" element="tns:Publish" />
+  </wsdl:message>
+  <wsdl:message name="ILinkService_Publish_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PublishResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILinkService_CallBackMethod_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:CallBackMethod" />
+  </wsdl:message>
+  <wsdl:portType name="ILinkService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="Console_link/ILinkService/GetData" message="tns:ILinkService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="Console_link/ILinkService/GetDataResponse" message="tns:ILinkService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadContent">
+      <wsdl:input wsaw:Action="Console_link/ILinkService/UploadContent" message="tns:ILinkService_UploadContent_InputMessage" />
+      <wsdl:output wsaw:Action="Console_link/ILinkService/UploadContentResponse" message="tns:ILinkService_UploadContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeEvent">
+      <wsdl:input wsaw:Action="Console_link/ILinkService/SubscribeEvent" message="tns:ILinkService_SubscribeEvent_InputMessage" />
+      <wsdl:output wsaw:Action="Console_link/ILinkService/SubscribeEventResponse" message="tns:ILinkService_SubscribeEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnsubscribeEvent">
+      <wsdl:input wsaw:Action="Console_link/ILinkService/UnsubscribeEvent" message="tns:ILinkService_UnsubscribeEvent_InputMessage" />
+      <wsdl:output wsaw:Action="Console_link/ILinkService/UnsubscribeEventResponse" message="tns:ILinkService_UnsubscribeEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <wsdl:input wsaw:Action="Console_link/ILinkService/Publish" message="tns:ILinkService_Publish_InputMessage" />
+      <wsdl:output wsaw:Action="Console_link/ILinkService/PublishResponse" message="tns:ILinkService_Publish_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackMethod">
+      <wsdl:output wsaw:Action="Console_link/ILinkService/CallBackMethod" message="tns:ILinkService_CallBackMethod_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
