@@ -5,19 +5,19 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("server_holder")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("server holder")]
+[assembly: AssemblyDescription("Console Link 服务端示范程序")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("server_holder")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCompany("Console iT")]
+[assembly: AssemblyProduct("Console Link Server Holder")]
+[assembly: AssemblyCopyright("Copyright © Console iT 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 //将 ComVisible 设置为 false 将使此程序集中的类型
 //对 COM 组件不可见。  如果需要从 COM 访问此程序集中的类型，
 //请将此类型的 ComVisible 特性设置为 true。
-[assembly: ComVisible(false)]
+[assembly: ComVisible(true)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
 [assembly: Guid("c599cb2f-aa25-4ce1-92b4-60038a0be786")]

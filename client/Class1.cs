@@ -16,10 +16,14 @@ namespace Console_link
         public delegate void DataRenewHandler();
         public event DataRenewHandler DataRenewed;
 
-        public LinkClient()
+        public LinkClient(string remoteAddress)
         {
             InstanceContext context = new InstanceContext(this);
-            proxy = new LinkServiceClient(context);
+            WSDualHttpBinding binding = new WSDualHttpBinding();
+            Uri address = new Uri(remoteAddress);
+            EndpointAddress endpointAddress = new EndpointAddress(address);
+            //proxy = new LinkServiceClient(context);
+            proxy = new LinkServiceClient(context, binding, endpointAddress);
             proxy.SubscribeEvent();
         }
 

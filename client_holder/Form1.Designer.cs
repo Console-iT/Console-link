@@ -34,9 +34,9 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +76,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(222, 20);
             this.textBox3.TabIndex = 7;
-            this.textBox3.Text = "http://localhost:8733/Design_Time_Addresses/server/Service1/";
             // 
             // label2
             // 
@@ -98,14 +97,13 @@
             this.panel1.Size = new System.Drawing.Size(284, 194);
             this.panel1.TabIndex = 9;
             // 
-            // textBox1
+            // textBox4
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 29);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(260, 153);
-            this.textBox1.TabIndex = 2;
+            this.textBox4.Location = new System.Drawing.Point(213, 3);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(59, 20);
+            this.textBox4.TabIndex = 4;
             // 
             // textBox2
             // 
@@ -115,13 +113,14 @@
             this.textBox2.Size = new System.Drawing.Size(195, 20);
             this.textBox2.TabIndex = 3;
             // 
-            // textBox4
+            // textBox1
             // 
-            this.textBox4.Location = new System.Drawing.Point(213, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(59, 20);
-            this.textBox4.TabIndex = 4;
+            this.textBox1.Location = new System.Drawing.Point(12, 29);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(260, 153);
+            this.textBox1.TabIndex = 2;
             // 
             // Form1
             // 

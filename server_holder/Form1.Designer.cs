@@ -36,13 +36,13 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +88,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(151, 20);
             this.textBox2.TabIndex = 4;
+            this.textBox2.Text = "default";
             // 
             // comboBox1
             // 
@@ -117,15 +118,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(174, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Not Started";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.button3);
@@ -139,29 +131,15 @@
             this.panel1.Size = new System.Drawing.Size(284, 164);
             this.panel1.TabIndex = 10;
             // 
-            // label5
+            // button3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "标题:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(49, 6);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(137, 20);
-            this.textBox4.TabIndex = 10;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(12, 33);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(260, 93);
-            this.textBox5.TabIndex = 11;
+            this.button3.Location = new System.Drawing.Point(12, 132);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(260, 23);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "发送！";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox2
             // 
@@ -176,23 +154,49 @@
             this.comboBox2.Size = new System.Drawing.Size(77, 21);
             this.comboBox2.TabIndex = 12;
             // 
-            // button3
+            // textBox5
             // 
-            this.button3.Location = new System.Drawing.Point(12, 132);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(260, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "发送！";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.textBox5.Location = new System.Drawing.Point(12, 33);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(260, 93);
+            this.textBox5.TabIndex = 11;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(49, 6);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(137, 20);
+            this.textBox4.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "标题:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Enabled = false;
+            this.label4.Location = new System.Drawing.Point(174, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 11;
+            this.label4.TabStop = true;
+            this.label4.Text = "Not Started";
+            this.label4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.label4_LinkClicked);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
@@ -204,7 +208,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "server holder";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -222,13 +226,13 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.LinkLabel label4;
     }
 }
 

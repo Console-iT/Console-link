@@ -29,7 +29,7 @@ namespace client_holder
 
         private void button1_Click(object sender, EventArgs e)
         {
-            link = new LinkClient();
+            link = new LinkClient(textBox3.Text);
             link.DataRenewed += Link_DataRenewed;
             label1.Text = "Connected";
             button1.Enabled = false;
