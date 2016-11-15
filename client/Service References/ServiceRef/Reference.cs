@@ -18,32 +18,17 @@ namespace Console_link.ServiceRef {
         [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/GetData", ReplyAction="Console_link/ILinkService/GetDataResponse")]
         string GetData(int value);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/GetData", ReplyAction="Console_link/ILinkService/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
-        
         [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/UploadContent", ReplyAction="Console_link/ILinkService/UploadContentResponse")]
         Console_link.Transfer UploadContent(Console_link.Transfer composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/UploadContent", ReplyAction="Console_link/ILinkService/UploadContentResponse")]
-        System.Threading.Tasks.Task<Console_link.Transfer> UploadContentAsync(Console_link.Transfer composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/SubscribeEvent", ReplyAction="Console_link/ILinkService/SubscribeEventResponse")]
         void SubscribeEvent();
         
-        [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/SubscribeEvent", ReplyAction="Console_link/ILinkService/SubscribeEventResponse")]
-        System.Threading.Tasks.Task SubscribeEventAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/UnsubscribeEvent", ReplyAction="Console_link/ILinkService/UnsubscribeEventResponse")]
         void UnsubscribeEvent();
         
-        [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/UnsubscribeEvent", ReplyAction="Console_link/ILinkService/UnsubscribeEventResponse")]
-        System.Threading.Tasks.Task UnsubscribeEventAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/Publish", ReplyAction="Console_link/ILinkService/PublishResponse")]
         void Publish(Console_link.Transfer data);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/Publish", ReplyAction="Console_link/ILinkService/PublishResponse")]
-        System.Threading.Tasks.Task PublishAsync(Console_link.Transfer data);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -85,40 +70,20 @@ namespace Console_link.ServiceRef {
             return base.Channel.GetData(value);
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
-        }
-        
         public Console_link.Transfer UploadContent(Console_link.Transfer composite) {
             return base.Channel.UploadContent(composite);
-        }
-        
-        public System.Threading.Tasks.Task<Console_link.Transfer> UploadContentAsync(Console_link.Transfer composite) {
-            return base.Channel.UploadContentAsync(composite);
         }
         
         public void SubscribeEvent() {
             base.Channel.SubscribeEvent();
         }
         
-        public System.Threading.Tasks.Task SubscribeEventAsync() {
-            return base.Channel.SubscribeEventAsync();
-        }
-        
         public void UnsubscribeEvent() {
             base.Channel.UnsubscribeEvent();
         }
         
-        public System.Threading.Tasks.Task UnsubscribeEventAsync() {
-            return base.Channel.UnsubscribeEventAsync();
-        }
-        
         public void Publish(Console_link.Transfer data) {
             base.Channel.Publish(data);
-        }
-        
-        public System.Threading.Tasks.Task PublishAsync(Console_link.Transfer data) {
-            return base.Channel.PublishAsync(data);
         }
     }
 }
