@@ -9,7 +9,86 @@
 //------------------------------------------------------------------------------
 
 namespace Console_link.ServiceRef {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Message", Namespace="http://schemas.datacontract.org/2004/07/Console_link")]
+    [System.SerializableAttribute()]
+    public partial class Message : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte EncodingMethodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Content {
+            get {
+                return this.ContentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContentField, value) != true)) {
+                    this.ContentField = value;
+                    this.RaisePropertyChanged("Content");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte EncodingMethod {
+            get {
+                return this.EncodingMethodField;
+            }
+            set {
+                if ((this.EncodingMethodField.Equals(value) != true)) {
+                    this.EncodingMethodField = value;
+                    this.RaisePropertyChanged("EncodingMethod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="Console_link", ConfigurationName="ServiceRef.ILinkService", CallbackContract=typeof(Console_link.ServiceRef.ILinkServiceCallback))]
@@ -19,7 +98,7 @@ namespace Console_link.ServiceRef {
         string GetData(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/UploadContent", ReplyAction="Console_link/ILinkService/UploadContentResponse")]
-        Console_link.Transfer UploadContent(Console_link.Transfer composite);
+        Console_link.ServiceRef.Message UploadContent(Console_link.ServiceRef.Message composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/SubscribeEvent", ReplyAction="Console_link/ILinkService/SubscribeEventResponse")]
         void SubscribeEvent();
@@ -28,14 +107,14 @@ namespace Console_link.ServiceRef {
         void UnsubscribeEvent();
         
         [System.ServiceModel.OperationContractAttribute(Action="Console_link/ILinkService/Publish", ReplyAction="Console_link/ILinkService/PublishResponse")]
-        void Publish(Console_link.Transfer data);
+        void Publish(Console_link.ServiceRef.Message data);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ILinkServiceCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="Console_link/ILinkService/CallBackMethod")]
-        void CallBackMethod(Console_link.Transfer data);
+        void CallBackMethod(Console_link.ServiceRef.Message data);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -70,7 +149,7 @@ namespace Console_link.ServiceRef {
             return base.Channel.GetData(value);
         }
         
-        public Console_link.Transfer UploadContent(Console_link.Transfer composite) {
+        public Console_link.ServiceRef.Message UploadContent(Console_link.ServiceRef.Message composite) {
             return base.Channel.UploadContent(composite);
         }
         
@@ -82,7 +161,7 @@ namespace Console_link.ServiceRef {
             base.Channel.UnsubscribeEvent();
         }
         
-        public void Publish(Console_link.Transfer data) {
+        public void Publish(Console_link.ServiceRef.Message data) {
             base.Channel.Publish(data);
         }
     }

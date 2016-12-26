@@ -11,7 +11,7 @@ namespace Console_link
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class LinkService : ILinkService
     {
-        private Action<Transfer> transferEvent = delegate { };
+        private Action<Message> transferEvent = delegate { };
         public static List<ICallback> clients;
 
         public LinkService()
@@ -24,7 +24,7 @@ namespace Console_link
             return string.Format("You entered: {0}", value);
         }
 
-        public Transfer UploadContent(Transfer composite)
+        public Message UploadContent(Message composite)
         {
             if (composite == null)
             {
@@ -51,7 +51,7 @@ namespace Console_link
             //transferEvent -= clientCallBack.CallBackMethod;
         }
 
-        public void Publish(Transfer data)
+        public void Publish(Message data)
         {
             foreach (var c in clients)
                 c.CallBackMethod(data);

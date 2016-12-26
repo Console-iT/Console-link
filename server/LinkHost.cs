@@ -34,7 +34,7 @@ namespace Console_link
         public void Publish(string titl, byte encod, string con)
         {
             foreach (var c in LinkService.clients)
-                c.CallBackMethod(new Transfer(titl, encod, con));
+                c.CallBackMethod(new Message(titl, encod, con));
         }
 
         public void Close()

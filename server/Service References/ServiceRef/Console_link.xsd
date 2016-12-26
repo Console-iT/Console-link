@@ -18,14 +18,14 @@
   <xs:element name="UploadContent">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Console_link" minOccurs="0" name="composite" nillable="true" type="q1:Transfer" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Console_link" minOccurs="0" name="composite" nillable="true" type="q1:Message" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UploadContentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Console_link" minOccurs="0" name="UploadContentResult" nillable="true" type="q2:Transfer" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Console_link" minOccurs="0" name="UploadContentResult" nillable="true" type="q2:Message" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -52,7 +52,7 @@
   <xs:element name="Publish">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Console_link" minOccurs="0" name="data" nillable="true" type="q3:Transfer" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Console_link" minOccurs="0" name="data" nillable="true" type="q3:Message" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -64,7 +64,7 @@
   <xs:element name="CallBackMethod">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Console_link" minOccurs="0" name="data" nillable="true" type="q4:Transfer" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Console_link" minOccurs="0" name="data" nillable="true" type="q4:Message" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

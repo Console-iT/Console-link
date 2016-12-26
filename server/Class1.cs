@@ -11,7 +11,7 @@ namespace Console_link
     public class LinkClient : ILinkServiceCallback
     {
         private LinkServiceClient proxy;
-        private Transfer mydata;
+        private ServiceRef.Message mydata;
 
         public delegate void DataRenewHandler();
         public event DataRenewHandler DataRenewed;
@@ -27,12 +27,6 @@ namespace Console_link
             proxy.SubscribeEvent();
         }
 
-        public void CallBackMethod(Transfer data)
-        {
-            mydata = data;
-            DataRenewed();
-        }
-
         public string GetTitle() { return mydata.Title; }
         public string GetContent() { return mydata.Content; }
         public byte GetEncoding() { return mydata.EncodingMethod; }
@@ -41,6 +35,12 @@ namespace Console_link
         {
             proxy.UnsubscribeEvent();
             proxy.Close();
+        }
+
+        public void CallBackMethod(ServiceRef.Message data)
+        {
+            mydata = data;
+            DataRenewed();
         }
     }
 }

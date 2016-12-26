@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using Console_link.ServiceRef;
 
 namespace Console_link
 {
@@ -15,7 +16,7 @@ namespace Console_link
         string GetData(int value);
 
         [OperationContract]
-        Transfer UploadContent(Transfer composite);
+        Message UploadContent(Message composite);
 
         // TODO: 在此添加您的服务操作
         [OperationContract]
@@ -25,13 +26,13 @@ namespace Console_link
         void UnsubscribeEvent();
 
         [OperationContract]
-        void Publish(Transfer data);
+        void Publish(Message data);
     }
 
     // 使用下面示例中说明的数据约定将复合类型添加到服务操作。
     // 可以将 XSD 文件添加到项目中。在生成项目后，可以通过命名空间“server.ContractType”直接使用其中定义的数据类型。
     [DataContract]
-    public class Transfer
+    public class Message
     {
         byte encodingMethod = 0;
         string title;
@@ -68,11 +69,16 @@ namespace Console_link
             set { content = value; }
         }
 
-        public Transfer(string titl, byte encod, string con)
+        public Message(string titl, byte encod, string con)
         {
             title = titl;
             encodingMethod = encod;
             content = con;
+        }
+
+        public static implicit operator Message(ServiceRef.Message v)
+        {
+            throw new NotImplementedException();
         }
     }
 
@@ -80,6 +86,6 @@ namespace Console_link
     public interface ICallback
     {
         [OperationContract(IsOneWay = true)]
-        void CallBackMethod(Transfer data);
+        void CallBackMethod(Message data);
     }
 }

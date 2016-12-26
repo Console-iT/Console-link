@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("server")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("CLcore")]
+[assembly: AssemblyDescription("Console Link 服务核心")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Console iT")]
-[assembly: AssemblyProduct("server")]
+[assembly: AssemblyProduct("Console Link")]
 [assembly: AssemblyCopyright("Copyright © Console iT 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
